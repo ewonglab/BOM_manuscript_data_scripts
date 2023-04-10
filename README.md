@@ -7,7 +7,11 @@ More details
 
 ## Usage
 
+You can used our pretrained BOM model to do prediction directly, or you can train a model for your own datasets.
+
 ### prediction with our pre-trained model
+
+Add how to use pretrain model for prediction
 
 ### train model on your own data
 
