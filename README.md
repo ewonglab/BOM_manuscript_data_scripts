@@ -2,7 +2,7 @@
 a machine learing method for cell-type specific enhancer prediction.
 It achieved high performance for both binary classification and multi-class prediction.
 
-## installation 
+## Installation 
 More details
 
 ## Usage
