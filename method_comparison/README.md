@@ -18,6 +18,6 @@ In this study, we trained the model on mouse development data (E8.25) using the 
 
 If you prefer not to retrain the models, you can directly load our trained model files (located in the ./models folder).
 
-### Binary-classification comparison with classical machine learning method - gkm-SVM
+### Binary-classification comparison with classical machine learning method - gkm-SVM and transformer-based DNAbert method
 
-We compared with gkm-SVM.
+We compared with gkm-SVM and DNAbert fine-tuned for cell-types.
