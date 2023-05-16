@@ -22,7 +22,8 @@ If you prefer not to retrain the models, you can directly load our trained model
 
 We compared with gkm-SVM and DNAbert fine-tuned for cell-types.
 
-For the DNAbert method, we fine-tuned pre-trained DNAbert model for 5 cell-types, including Cardiomyocyte, Nerual_crest, Gut, Allantois and Endothelium cell to predict cell-type specificity and we chose the best performance model (minimal val_loss on valid set) as the final model to compare with.
+For the DNAbert method, we fine-tuned pre-trained DNAbert model for 5 cell-types, including Cardiomyocyte, Nerual_crest, Gut, Allantois and Endothelium cell to predict cell-type specificity and we chose the best performance model (minimal val_loss on valid set) as the final model to compare with. More details for DNAbert finetuning can be found on the [github repo](https://github.com/jerryji1993/DNABERT). All used paramaters are provided in a supplymentary file.
+
 
 
 
