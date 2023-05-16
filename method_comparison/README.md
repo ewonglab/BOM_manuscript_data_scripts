@@ -1,7 +1,7 @@
-## Code and trained-models provided for method comparison section
+## Code and pre_trained-models provided for method comparison section
 
 In this file folder, we provided all code for method comparison, including three neural network methods for 
-<u>multi-classification comparison</u> and machine learning method gkm-SVM for 
+<u>multi-classification comparison</u>; machine learning method - gkm-SVM and fine-tuned DNAbert for 
 <u>binary classification comparison</u>.
 
 ### Multi-classification comparison with neural network methods
@@ -21,3 +21,8 @@ If you prefer not to retrain the models, you can directly load our trained model
 ### Binary-classification comparison with classical machine learning method - gkm-SVM and transformer-based DNAbert method
 
 We compared with gkm-SVM and DNAbert fine-tuned for cell-types.
+
+For the DNAbert method, we fine-tuned pre-trained DNAbert model for 5 cell-types, including Cardiomyocyte, Nerual_crest, Gut, Allantois and Endothelium cell to predict cell-type specificity and we chose the best performance model (minimal val_loss on valid set) as the final model to compare with.
+
+
+
