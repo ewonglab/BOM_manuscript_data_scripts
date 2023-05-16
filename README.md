@@ -9,11 +9,11 @@ More details
 
 You can used our pretrained BOM model to do prediction directly, or you can train a model for your own datasets.
 
-### prediction with our pre-trained model
+### Prediction with our pre-trained model
 
 Add how to use pretrain model for prediction
 
-### train model on your own data
+### Train model on your own data
 
 - Model for binary classification
 
@@ -21,8 +21,8 @@ Add how to use pretrain model for prediction
 
 
 
-### Method Comparison
+## Method Comparison Session
 
-We conducted extensive comparison with the-state-of-art deeplearing methods (Basset; DeepSTARR; DeepMEl; DNAbert) and machine-learing methods(gkm-SVM). More details of comparison can be found in the Method_Comparison Folder.
+We conducted extensive comparison with the-state-of-art deeplearing methods (Basset; DeepSTARR; DeepMEl; DNAbert) and machine-learing methods(gkm-SVM). More details of comparison can be found in the *Method_Comparison* Folder.
 
 
