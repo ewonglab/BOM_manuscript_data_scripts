@@ -4,7 +4,7 @@ In this file folder, we provided all code for method comparison, including three
 <u>multi-classification comparison</u>; machine learning method - gkm-SVM and fine-tuned DNAbert for 
 <u>binary classification comparison</u>.
 
-### Multi-classification comparison with neural network methods
+### Multi-classification comparisons with neural network methods
 
 We compared with three representative neural network methods by retraining models on our a mouse development data (E8.25), to predict 17 cell-type specific enhancers.
 
@@ -18,11 +18,11 @@ In this study, we trained the model on mouse development data (E8.25) using the 
 
 If you prefer not to retrain the models, you can directly load our trained model files (located in the ./models folder).
 
-### Binary-classification comparison with classical machine learning method - gkm-SVM and transformer-based DNAbert method
+### Binary-classification comparison 
 
-We compared with gkm-SVM and DNAbert fine-tuned for cell-types.
+We conducted a comparison with gkm-SVM and a fine-tuned version of DNAbert specific to cell-types.
 
-For the DNAbert method, we fine-tuned pre-trained DNAbert model for 5 cell-types, including Cardiomyocyte, Nerual_crest, Gut, Allantois and Endothelium cell to predict cell-type specificity and we chose the best performance model (minimal val_loss on valid set) as the final model to compare with. More details for DNAbert finetuning can be found on the [github repo](https://github.com/jerryji1993/DNABERT). All used paramaters are provided in a supplymentary file.
+For the DNAbert approach, we performed fine-tuning on a pre-trained DNAbert model using data from 5 different cell-types: Cardiomyocyte, Neural Crest, Gut, Allantois, and Endothelium cells. This allowed us to predict cell-type specificity, and we selected the best-performing model based on minimal validation loss on the validation set. This final model was then used for comparison. Further information on the DNAbert fine-tuning process can be found in the [GitHub repository](https://github.com/jerryji1993/DNABERT). All the parameters utilized in the study are provided in a supplementary file.
 
 
 
