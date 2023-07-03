@@ -22,6 +22,9 @@ If you prefer not to retrain the models, you can directly load our trained model
 
 We conducted a comparison with the gkm-SVM and a fine-tuned version of DNAbert specific to cell types.
 
+- gkm-SVM-2016 (see 'gkm-SVM.ipynb')
+- DNAbert-2021 (see 'DNAbert_finetune.ipynb')
+
 For the DNAbert approach, we employed the 6-mer pre-trained DNABert model and fine-tuned it to perform binary prediction of cell-type specific enhancers for a total of 17 cell types. To fine-tune models for each cell type, we used the recommended parameters: epochs=5, learning_rate=0.0002, logging_steps=100, warmup_percent=0.1 and weight_decay=0.01. 
 During fine-tuning, we monitored the change in loss on validation sets and selected the model with the best loss for further evaluation. However, the recommended parameters did not yield satisfactory results for most of the cell types, as we observed no significant decrease in loss or increase in accuracy during the fine-tuning process. 
 Therefore, we conducted further exploration by fine-tuning with different learning rates, namely a larger learning rate of 0.0003 and a lower learning rate of 0.0001, accompanied by a larger epoch value of 20. Ultimately, we selected the model with the lowest loss for each cell type to make comparisons. Further information on the DNAbert fine-tuning process can be found in the [GitHub repository](https://github.com/jerryji1993/DNABERT). All the parameters utilized in the study are provided in a supplementary file.
