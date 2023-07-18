@@ -16,15 +16,16 @@ cd BOM
 
 ## Filter candicate cis-regulatory elements
 
-Usage: **filter_CREs.R ** --help
+Usage: ```filter_CREs.R  --help ```
 
 > Parameters:
+> 
 > --help                           Display this help message
---input_bed=<file> input BED file
+> --input_bed=<file> input BED file
 
---annot=<file> assembly annotation file (.gtf) 
+- annot=<file> assembly annotation file (.gtf) 
 
---chr_sizes=<file> File with chromosome length values 
+- chr_sizes=<file> File with chromosome length values 
 
 --u=<integer>   Number of base pairs upstream of TSS for the definition of proximal regions
 
