@@ -49,7 +49,7 @@ if (display_help) {
   cat("--training_set=<file>     Path to save the training set (optional)\n")
   cat("--help                    Display this help message\n")
   cat("\n")
-  q("no", status = 1)
+  q("no", status = 0)
   } else {
   input_data <- params$input_data
   xgb_model <- params$xgb_model
