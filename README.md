@@ -16,9 +16,9 @@ cd BOM
 
 ## Filter candicate cis-regulatory elements
 
-Usage: ```filter_CREs.R  --help ```
+Usage:  ```filter_CREs.R  --help ```
 
-> Parameters:
+Parameters:
 > 
 > --help  Display this help message
 > 
