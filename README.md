@@ -53,19 +53,20 @@ sh run_fimo.sh mouseE8.25_motifs Mus_musculus.GRCm38.dna_sm.primary_assembly.fa 
 
 ## Make matrix of motif counts for binary classification
 
-Usage: Rscript matrix_for_binary_model.R [options]
+Usage:  '''Rscript matrix_for_binary_model.R --help'''
 
 Options:
-  --target_ct=<target_cell_type>    Name of the target cell type
-  
-  --data_path=<data_directory>     Path to the data directory
-  
-  --qval_thresh=<qvalue_threshold> Q-value threshold for filtering
-  
-  --out_filename=<output_filename> Name for the output file
-  
-  --help                           Display this help message
 
+> --help                           Display this help message
+>
+>  --target_ct=<target_cell_type>    Name of the target cell type
+>  
+>  --data_path=<data_directory>     Path to the data directory
+>  
+>  --qval_thresh=<qvalue_threshold> Q-value threshold for filtering
+>  
+>  --out_filename=<output_filename> Name for the output file
+  
 ### Train model on your own data
 
 - Model for binary classification
@@ -74,63 +75,64 @@ Options:
 
 ### Training a model for binary classification
 
-Usage: Rscript training_binary.R [options]
+Usage: '''Rscript training_binary.R --help'''
 
 Options:
 
---input_data=<file>		Path to the input matrix of motif counts (required)
+> --help                    Display this help message
+>
+> --input_data=<file>		Path to the input matrix of motif counts (required)
+>
+> --data=<data>			The training data (default: dtrain)
+>
+> --nrounds=<n>			Number of boosting rounds (default: 10000)
+>
+> --eta=<value>			Learning rate (default: 0.01)
+>
+> --max_depth=<n>		Maximum tree depth (default: 6)
+>
+> --subsample=<value>		Subsample ratio of the training instances (default: 0.5)
+>
+> --colsample_bytree=<value>	Subsample ratio of columns when constructing each tree (default: 0.5)
+>
+> --objective=<name>		Objective function (default: binary:logistic)
+>
+> --early_stopping_rounds=<n>	Perform early stopping if no improvement for this many rounds (default: NULL)
+>
+> --nthread=<n>			Number of parallel threads (default: 1)
+>
+> --eval_metric=<name>		Evaluation metric (default: error)
+>
+> --maximize=<bool>		Whether to maximize the evaluation metric (default: FALSE)
+>
+> --save_period=<n>		Save the model for every given number of rounds (default: NULL)
+>
+> --save_name=<file>		Name of the saved model file (default: xgboost.model)
+>
+> --feval=<file>		Customized evaluation metric (default: NULL)
+>
+> --Verbose=<file>		How much details on the progress to print (default: 1)
+>
+> --print_every_n=<file>		Print evaluation messages each n-th iterations (default: 1)
+>
+> --save_name=<file>		Name of the saved model file (default: xgboost.model)>
 
---data=<data>			The training data (default: dtrain)
-
---nrounds=<n>			Number of boosting rounds (default: 10000)
-
---eta=<value>			Learning rate (default: 0.01)
-
---max_depth=<n>		Maximum tree depth (default: 6)
-
---subsample=<value>		Subsample ratio of the training instances (default: 0.5)
-
---colsample_bytree=<value>	Subsample ratio of columns when constructing each tree (default: 0.5)
-
---objective=<name>		Objective function (default: binary:logistic)
-
---early_stopping_rounds=<n>	Perform early stopping if no improvement for this many rounds (default: NULL)
-
---nthread=<n>			Number of parallel threads (default: 1)
-
---eval_metric=<name>		Evaluation metric (default: error)
-
---maximize=<bool>		Whether to maximize the evaluation metric (default: FALSE)
-
---save_period=<n>		Save the model for every given number of rounds (default: NULL)
-
---save_name=<file>		Name of the saved model file (default: xgboost.model)
-
---feval=<file>		Customized evaluation metric (default: NULL)
-
---Verbose=<file>		How much details on the progress to print (default: 1)
-
---print_every_n=<file>		Print evaluation messages each n-th iterations (default: 1)
-
---save_name=<file>		Name of the saved model file (default: xgboost.model)
-
---help                    Display this help message
 
 ### Prediction using model trained for binary classification
 
-Usage: Rscript xgboost_predictions.R [parameters]
+Usage: ''' Rscript xgboost_predictions.R --help
 
 Parameters:
+> --help                    Display this help message
+>
+> --input_data=<file>       Path to the input data file
+>
+> --xgb_model=<file>        Path to the xgboost model file
+>
+> --predictions=<file>      Path to save the predicted values
+>
+> --training_set=<file>     Path to save the training set (optional)
 
---input_data=<file>       Path to the input data file
-
---xgb_model=<file>        Path to the xgboost model file
-
---predictions=<file>      Path to save the predicted values
-
---training_set=<file>     Path to save the training set (optional)
-
---help                    Display this help message
 
 
 
