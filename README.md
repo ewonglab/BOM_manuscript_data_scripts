@@ -21,25 +21,25 @@ Usage: ```filter_CREs.R  --help ```
 > Parameters:
 > 
 > --help  Display this help message
-
+> 
 > --input_bed=<file> input BED file
-
+> 
 > -- annot=<file> assembly annotation file (.gtf) 
-
+>
 > -- chr_sizes=<file> File with chromosome length values 
-
+>
 > --u=<integer>   Number of base pairs upstream of TSS for the definition of proximal regions
-
+>
 > --d=<integer>   Number of base pairs downstream of TSS for the definition of proximal regions
-
+>
 > --nbp=<integer> Number of central base pairs in adjusted CREs 
-
+>
 > --out_bed=<file> output BED file
-
+>
 > --keep_proximal=<logical> whether only proximal regions to TSS should be retained (default: FALSE)
-
+>
 > --remove_proximal=<logical> whether proximal regions to TSS should be removed (default: FALSE)
-
+>
 > --non_exonic=<logical> whether regions overlapping exons should be removed (default: FALSE)
 
 ## Run TF binding motif search
