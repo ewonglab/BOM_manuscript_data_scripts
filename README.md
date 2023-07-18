@@ -16,9 +16,10 @@ cd BOM
 
 ## Filter candicate cis-regulatory elements
 
-Usage: filter_CREs.R [parameters]
+Usage: **filter_CREs.R ** --help
 
-Parameters:
+> Parameters:
+> --help                           Display this help message
 --input_bed=<file> input BED file
 
 --annot=<file> assembly annotation file (.gtf) 
@@ -39,7 +40,7 @@ Parameters:
 
 --non_exonic=<logical> whether regions overlapping exons should be removed (default: FALSE)
 
---help                           Display this help message
+
 
 ## Run TF binding motif search
 
