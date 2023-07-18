@@ -53,7 +53,7 @@ sh run_fimo.sh mouseE8.25_motifs Mus_musculus.GRCm38.dna_sm.primary_assembly.fa 
 
 ## Make matrix of motif counts for binary classification
 
-Usage:  '''Rscript matrix_for_binary_model.R --help'''
+Usage:  ```Rscript matrix_for_binary_model.R --help```
 
 Options:
 
@@ -75,7 +75,7 @@ Options:
 
 ### Training a model for binary classification
 
-Usage: '''Rscript training_binary.R --help'''
+Usage: ```Rscript training_binary.R --help```
 
 Options:
 
@@ -120,7 +120,7 @@ Options:
 
 ### Prediction using model trained for binary classification
 
-Usage: ''' Rscript xgboost_predictions.R --help
+Usage: ``` Rscript xgboost_predictions.R --help```
 
 Parameters:
 > --help                    Display this help message
