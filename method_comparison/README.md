@@ -1,6 +1,7 @@
 ## Code and pre_trained-models provided for the method comparison section
 
 In this file folder, we provided all code for method comparison, including three neural network methods for 
+
 <u>multi-classification comparison</u>; machine learning method - gkm-SVM and fine-tuned DNAbert for 
 <u>binary classification comparison</u>.
 
@@ -12,9 +13,12 @@ We compared with three representative neural network methods by retraining model
 - DeepSTARR-2020 (see 'deepSTARR_model.ipynb')
 - DeepMEL-2020 (see 'deepMel_model.ipynb')
 
-For a fair comparison, we used 500bp sequences from the center of peaks and their reverse complement sequences to double our sample size. For each method, we re-implemented their approaches according to their neural network architecture and only modified the output layer (n=17) to predict 17 cell-type-specific enhancers. More details about these methods can be found on their GitHub pages.
+For a fair comparison, we used 500bp sequences from the center of peaks and their reverse complement sequences to double our sample size. 
+For each method, we re-implemented their approaches according to their neural network architecture and only modified the output layer (n=17) to predict 17 cell-type-specific enhancers. 
+More details about these methods can be found on their GitHub pages.
 
-In this study, we trained the model on mouse development data (E8.25) using the following parameters: Epochs = 100, Batch size = 128, Early stopping = 10. We saved the best val_loss model to perform the further evaluation.  Additional details regarding model training and evaluation can be found in the scripts.
+In this study, we trained the model on mouse development data (E8.25) using the following parameters: Epochs = 100, Batch size = 128, Early stopping = 10. 
+We saved the best val_loss model to perform the further evaluation.  Additional details regarding model training and evaluation can be found in the scripts.
 
 If you prefer not to retrain the models, you can directly load our trained model files (located in the ./models folder).
 
