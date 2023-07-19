@@ -136,8 +136,6 @@ Parameters:
 
 
 
-## Method Comparison Session
 
-We conducted extensive comparison with the-state-of-art deeplearing methods (Basset; DeepSTARR; DeepMEl; DNAbert) and machine-learing methods(gkm-SVM). More details of comparison can be found in the *Method_Comparison* Folder.
 
 
