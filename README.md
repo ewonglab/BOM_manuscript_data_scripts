@@ -1,6 +1,6 @@
 # BOM
 BOM, short for Bag-Of-Motifs, is a framework for analyzing cis-regulatory regions. 
-It operates on the principle that the activity of these regions relies on the binding of transcription factors (TFs) to specific TF binding motifs. Leveraging available TF binding motif profiles and the Extreme Gradient Boosting (XGBoost) algorithm, a tree-based machine learning architecture, BOM achieves exceptional performance in classifying context-specific cis-regulatory elements. 
+It operates on the principle that the activity of these regions relies on the binding of transcription factors (TFs) to specific TF binding motifs. Leveraging available TF binding motif profiles and the Extreme Gradient Boosting (XGBoost) algorithm, a tree-based machine learning architecture, BOM has achieved high performance in classifying context-specific cis-regulatory elements. 
 Additionally, through the use of SHapley Additive exPlanations (SHAP), BOM enables the identification of important TF binding motifs that contribute to the classification. 
 
 To facilitate further analysis, BOM offers several visualization options for motif counts and motif importance scores. 
