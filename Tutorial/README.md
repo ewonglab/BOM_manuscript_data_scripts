@@ -14,3 +14,4 @@ cd BOM/Tutorial
 unzip Pijuan_etal_table_S6.csv.zip
 ```
 
+> In data file, the cell type annotation is indicated in the column "celltype_specificity". Some snATAC-seq peaks were annotated to multiple cell types. Please find more details in the tutorial.
