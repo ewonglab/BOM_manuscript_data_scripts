@@ -11,5 +11,6 @@ Before you run through this tutorial, make sure you execute the below commands f
 ```
 git clone https://github.com/ewonglab/BOM.git
 cd BOM/Tutorial
+unzip Pijuan_etal_table_S6.csv.zip
 ```
 
