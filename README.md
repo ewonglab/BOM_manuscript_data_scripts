@@ -6,6 +6,21 @@ Additionally, through the use of SHapley Additive exPlanations (SHAP), BOM enabl
 To facilitate further analysis, BOM offers several visualization options for motif counts and motif importance scores. 
 These visualizations allow users to explore and interpret the most influential motifs learned by BOM, providing valuable insights into the regulatory landscape of the analyzed cis-regulatory regions.
 
+## R dependencies
+
+rsample
+xgboost
+GenomicFeatures
+GenomicRanges
+data.table
+tidyr
+dplyr
+
+cvAUC
+pROC
+ggplot2
+yardstick
+
 ## Installation 
 
 ```
