@@ -11,22 +11,15 @@ These visualizations allow users to explore and interpret the most influential m
 rsample
 xgboost
 GenomicFeatures
-
 GenomicRanges
-
 data.table
-
 tidyr
-
 dplyr
 
 
 cvAUC
-
 pROC
-
 ggplot2
-
 yardstick
 
 ## Installation 
