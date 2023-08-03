@@ -142,6 +142,20 @@ Parameters:
 >
 > --training_set=<file>     Path to save the training set (optional)
 
+### Tutorial
+For a comprehensive guide on how to fully utilize BOM, including data pre-process, model training, model prediction and model interpretation.
+
+Please refer to the tutorial provided [here](https://github.com/ewonglab/BOM/tree/main/Tutorial).
+
+### How to cite
+If you use BOM in your work, please cite:
+
+A Bag-Of-Motif Captures Context-Specific Distal Regulatory Elements
+
+Paola Cornejo-Paramo, Xuan Zhang, Lithin Louis, Yi-Hua Yang, Emily S. Wong
+
+
+
 
 
 
