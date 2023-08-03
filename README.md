@@ -47,7 +47,7 @@ Parameters:
 >
 > --non_exonic=<logical> whether regions overlapping exons should be removed (default: FALSE)
 
-## Motif search
+## Motif searching
 
 Usage: ``` run_fimo.sh  -m /gimme.vertebrate.v5.0.meme  -g /Mus_musculus_GRCm38.fa  -b /Tutorial/bed_files -o /Tutorial/motifs```
 
@@ -60,7 +60,7 @@ Usage: args [-o] [-g] [-b] [-m]
 -b means path to bed file folder (Default: ./Tutorial/bed_files)
 ```
 
-## Make matrix of motif counts for binary classification
+## Motif Counting
 
 Usage:  ```Rscript matrix_for_binary_model.R --help```
 
@@ -76,7 +76,7 @@ Options:
 >  
 >  --out_filename=<output_filename> Name for the output file
   
-### Train model on your own data
+### Model Training
 
 - Model for binary classification
 
@@ -127,7 +127,7 @@ Options:
 > --save_name=<file>		Name of the saved model file (default: xgboost.model)>
 
 
-### Prediction using model trained for binary classification
+### Model Prediction
 
 Usage: ``` Rscript xgboost_predictions.R --help```
 
