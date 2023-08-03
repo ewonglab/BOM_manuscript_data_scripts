@@ -16,6 +16,7 @@ Please load the below R packages.
 ```
 git clone https://github.com/ewonglab/BOM.git
 cd BOM
+chmod +x ./scripts/binary/*.sh
 ```
 
 ## Filter candicate cis-regulatory elements
