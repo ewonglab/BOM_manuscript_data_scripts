@@ -19,7 +19,7 @@ cd BOM
 chmod +x ./scripts/binary/*.sh
 ```
 
-## Filter candicate cis-regulatory elements
+## Candicate cis-regulatory elements filter
 
 Usage:  ```filter_CREs.R  --help ```
 
@@ -47,13 +47,18 @@ Parameters:
 >
 > --non_exonic=<logical> whether regions overlapping exons should be removed (default: FALSE)
 
-## Run TF binding motif search
+## Motif search
+
+Usage: ``` run_fimo.sh  -m /gimme.vertebrate.v5.0.meme  -g /Mus_musculus_GRCm38.fa  -b /Tutorial/bed_files -o /Tutorial/motifs```
 
 ```
-bed_files=("Allantois.bed" "ExE_endoderm.bed" "Mid_Hindbrain.bed" "Neural_crest.bed" "Somitic_mesoderm.bed" "Cardiomyocytes.bed" "Forebrain.bed" "Mixed_mesoderm.bed" 
-            "NMP.bed" "Spinal_cord.bed" "Endothelium.bed" "Gut.bed" "Paraxial_mesoderm.bed" "Surface_ectoderm.bed" "Erythroid.bed" "Mesenchyme.bed" "Pharyngeal_mesoderm.bed")
+run_fimo.sh: 
+Usage: args [-o] [-g] [-b] [-m] 
+-m means path to motif database
+-g means path to genome reference fasta file
+-o means set a output path (Default: ./Tutorial/motifs)
+-b means path to bed file folder (Default: ./Tutorial/bed_files)
 
-sh run_fimo.sh mouseE8.25_motifs Mus_musculus.GRCm38.dna_sm.primary_assembly.fa "${bed_files[@]}"
 ```
 
 ## Make matrix of motif counts for binary classification
