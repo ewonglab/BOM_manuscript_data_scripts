@@ -4,7 +4,7 @@ For a comprehensive guide on fully utilizing BOM, please refer to the tutorial (
 
 In this tutorial, we will go through the whole BOM pipeline and use BOM to train a binary model, which is able to predict mouse cardiomyocyte-specific candidate regulatory elements (CRE) from background CRE of other 16 cell types. 
 
-![BOM_pipeline](/BOM_pipeline.png)
+![BOM_pipeline](///BOM_pipeline.png)
 
 Before you run through this tutorial, make sure you execute the below commands first.
 
