@@ -58,7 +58,6 @@ Usage: args [-o] [-g] [-b] [-m]
 -g means path to genome reference fasta file
 -o means set a output path (Default: ./Tutorial/motifs)
 -b means path to bed file folder (Default: ./Tutorial/bed_files)
-
 ```
 
 ## Make matrix of motif counts for binary classification
