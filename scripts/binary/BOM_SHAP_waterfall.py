@@ -103,6 +103,8 @@ for region in regions_ids:
     except KeyError:
         # Handle the case when the region is not found in 'X'
         indices.append(None)
+        print("Index Error: the requested sequences are not in the table of SHAP values")
+        sys.exit(0)
 
 print("Saving beeswarm plot...")
 
@@ -124,8 +126,5 @@ for i in range(len(regions_ids)):
   show = args.show)
   plt.savefig(out_file, bbox_inches='tight')
   plt.close()
-
-
-
 
 print("Done")
