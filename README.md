@@ -25,9 +25,7 @@ chmod +x ./scripts/binary/*.sh
 
 ## Binary classification tutorial
 
-For a tutorial on how to train a binary model please go to [https://ewonglab.github.io/BOM/](https://ewonglab.github.io/BOM/)
-
-For the intergretation and visualisation please go to XX
+For a comprehensive guide on how to fully utilize BOM, including data pre-process, model training and model prediction please refer to the tutorial provided [here](https://ewonglab.github.io/BOM/). For the interpretation and visualisation please go to [here](XX).
 
 ## Candicate cis-regulatory elements filter
 
@@ -152,9 +150,6 @@ Parameters:
 >
 > --training_set=<file>     Path to save the training set (optional)
 
-### Tutorial
-For a comprehensive guide on how to fully utilize BOM, including data pre-process, model training, model prediction and model interpretation.
-Please refer to the tutorial provided [here](https://ewonglab.github.io/BOM/).
 
 <!---
 ### How to cite
