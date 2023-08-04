@@ -23,6 +23,11 @@ cd BOM
 chmod +x ./scripts/binary/*.sh
 ```
 
+## Binary classification tutorial
+
+For a tutorial on how to train a binary model please go to [https://ewonglab.github.io/BOM/](https://ewonglab.github.io/BOM/)
+For the intergretation and visualisation please go to XX
+
 ## Candicate cis-regulatory elements filter
 
 Usage:  ```filter_CREs.R  --help ```
