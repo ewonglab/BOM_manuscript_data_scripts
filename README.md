@@ -6,7 +6,7 @@ Additionally, through the use of SHapley Additive exPlanations (SHAP), BOM enabl
 To facilitate further analysis, BOM offers several visualization options for motif counts and motif importance scores. 
 These visualizations allow users to explore and interpret the most influential motifs learned by BOM, providing valuable insights into the regulatory landscape of the analyzed cis-regulatory regions.
 
-![BOM pipeline](///BOM_pipeline.png)
+<![BOM pipeline](///BOM_pipeline.png)>
 
 ## R dependencies
 
@@ -146,15 +146,15 @@ Parameters:
 
 ### Tutorial
 For a comprehensive guide on how to fully utilize BOM, including data pre-process, model training, model prediction and model interpretation.
-Please refer to the tutorial provided [here](https://github.com/ewonglab/BOM/tree/main/Tutorial](https://ewonglab.github.io/BOM/).
+Please refer to the tutorial provided [here](https://ewonglab.github.io/BOM/).
 
-### How to cite
+<### How to cite
 If you use BOM in your work, please cite:
 
 A Bag-Of-Motif Captures Context-Specific Distal Regulatory Elements
 
 Paola Cornejo-Paramo, Xuan Zhang, Lithin Louis, Yi-Hua Yang, Emily S. Wong
-
+>
 
 
 
