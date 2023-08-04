@@ -146,7 +146,7 @@ Parameters:
 
 ### Tutorial
 For a comprehensive guide on how to fully utilize BOM, including data pre-process, model training, model prediction and model interpretation.
-Please refer to the tutorial provided [here](https://github.com/ewonglab/BOM/tree/main/Tutorial).
+Please refer to the tutorial provided [here](https://github.com/ewonglab/BOM/tree/main/Tutorial](https://ewonglab.github.io/BOM/).
 
 ### How to cite
 If you use BOM in your work, please cite:
