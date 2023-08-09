@@ -16,7 +16,7 @@ The following datasets are included:
 
 
 #### References
-Initial datasets were collected from the following references:
+Initial datasets were gathered from the following references:
 
 1. Pijuan-Sala, B. et al. Single-cell chromatin accessibility maps reveal regulatory programs driving early mouse organogenesis. Nat. Cell Biol. 22, 487–497 (2020).
 2. Argelaguet, R. et al. Decoding gene regulation in the mouse embryo using single-cell multi-omics. 2022.06.15.496239 Preprint at https://doi.org/10.1101/2022.06.15.496239 (2022).
