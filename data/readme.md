@@ -1,4 +1,4 @@
-## Candidate cis-regulatory elements (CRE) datasets
+## Cell state associated cis-regulatory elements (CRE) datasets
 
 All CREs correspond to distal regions (> 1kb from any transcription start site). CREs overlapping exons were removed. The genome reference for human CREs is hg19, while the genome reference for mouse CREs is mm10. For fruit fly and zebrafish CREs, the genome references are dm3 and danRer10, respectively. CREs were trimmed (keeping their center) to ensure a consistent width in each dataset.
 
