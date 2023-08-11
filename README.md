@@ -156,7 +156,7 @@ Parameters:
 
 ### Data
 
-Candidate cis-regulatory elements used to test BOM are located in [data](https://github.com/ewonglab/BOM/tree/main/data)
+Cell type/state specific cis-regulatory elements used to test BOM are located in [data](https://github.com/ewonglab/BOM/tree/main/data)
 
 <!---
 ### How to cite
