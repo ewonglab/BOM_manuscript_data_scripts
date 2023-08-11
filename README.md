@@ -154,6 +154,10 @@ Parameters:
 > --training_set=<file>     Path to save the training set (optional)
 
 
+### Data
+
+Candidate cis-regulatory elements used to test BOM are located in [data](https://github.com/ewonglab/BOM/tree/main/data)
+
 <!---
 ### How to cite
 If you use BOM in your work, please cite:
