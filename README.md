@@ -1,6 +1,6 @@
 # BOM
 
-The following provides the code and scripts used in the BOM manuscript.
+The following provides the code and scripts used in the BOM manuscript. Scripts for method comparisons are also included.
 
 
 <!---
