@@ -1,3 +1,5 @@
+# This script is used to predict human cell types using SHAP scores derived from a BOM model trained to distinguish mouse cell types
+# A  heatmap for the proportion of cells predicted by each model class and a beeswarm plot showing cell type prediction performance metrics are generated.
 
 suppressMessages({
   library(reshape2)
@@ -245,6 +247,49 @@ human_stats <- calculate_metrics(norm_shap.z)
 # 5    Fibroblast 0.9361736 0.95481474 0.8666471 0.90859705 0.8621220
 # 6 Smooth_Muscle 0.9398418 0.66868262 0.5474704 0.60203598 0.5731828
 # 7            AD 0.9990695         NA 0.0000000         NA        NA
+human_stats <- calculate_metrics(norm_shap.z)
 
-# Save satatistics
-# Save prediction metrics beeswarm plot
+# Mean across cell types 
+apply(human_stats[,2:ncol(human_stats)], 2, mean, na.rm = T)
+# Accuracy Precision    Recall  F1_Score       MCC
+# 0.9557901 0.6715525 0.6142161 0.6395674 0.6286252
+
+# Save stats
+write.csv(x = human_stats, file = "human_min20MarkP_byCellNorm_z.norm.shap_STATS.csv"
+          , quote = F)
+human_stats <- melt(human_stats, varnames = "CellType")
+
+my_theme <-  theme(panel.border = element_blank(), panel.grid.major = element_blank()
+                   , panel.grid.minor = element_blank()#legend.position="none"
+                   , axis.line = element_line(colour = "black", linewidth = 1)
+                   , legend.title = element_blank()
+                   , legend.key=element_blank()
+                   , legend.position = "bottom"
+                   , legend.key.width = unit(1.5,"cm")
+                   , panel.background = element_blank()
+                   , text = element_text(size=12)
+                   , legend.text=element_text(size=8)
+                   , axis.text.x=element_text(colour="black")
+                   , axis.text.y=element_text(colour="black")
+                   , axis.ticks = element_line(colour = "black"))
+
+human_stats$CellType <- sub("AD", "Adipocyte", human_stats$CellType)
+my_colors <- setNames(c("#F0A0FF", "#0075DC", "#4C005C", "#191919"
+                        , "#005C31", "#94FFB5", "#8F7C00", "#C20088")
+                      , c("Fibroblast", "Cardiomyocyte", "Macrophage"
+                          , "Endothelial", "Lymphocyte", "Smooth_Muscle"
+                          , "Nervous", "Adipocyte"))
+
+# Remove adipocyte since stats are not calculated for this cell type (no adipocyte model class)
+human_stats <- human_stats[human_stats$CellType != "Adipocyte",]
+
+pdf("human_min20MarkP_by_ysedMarkerP_matched_byCellNorm_z.norm.shap_STATS_bw.pdf")
+ggplot(human_stats, mapping = aes(variable, value, color = CellType)) +
+  geom_beeswarm(dodge.width=.8,cex=2) + my_theme +
+  stat_summary(
+    fun = "mean", geom = "point", aes(group = variable),
+    color = "black", size = 10, shape=95) +  scale_color_manual(values = my_colors) +
+  scale_x_discrete(expand = c(0.1, 0.1))
+dev.off()
+
+
