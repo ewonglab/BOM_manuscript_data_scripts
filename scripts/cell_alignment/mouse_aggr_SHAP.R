@@ -188,3 +188,34 @@ parallel_meanSHAP(cell_ids = cells
                   , shap_values = shap
                   , OUTFILE = paste0("m.union_allMark_by_ysMarkerP_matched_", CellType, "cells_mSHAP_ho.txt")
                   , num_cores = my_number_cores)
+
+                              
+# -------------------------------------------------------- #
+# A single file for all mouse cell types
+                              
+library(reshape2)
+library(data.table)
+library(tidyr)
+
+CellTypes <- c("Fibroblast", "Cardiomyocyte", "Pericytes", "M1"
+               , "Coronary_EC", "M2", "Endocardial_EC", "T_cell"
+               , "Lymphatic_EC", "Dendritic", "CM", "Mesothelial"
+               , "M_Ex", "HSPC", "B_cell", "Smooth_Muscle", "NK"
+               , "Cardiac_Neuronal", "ATAC_unknown1")
+
+shap_files <- paste0("m.union_allMark_by_ysMarkerP_matched_", CellTypes, "cells_mSHAP_ho.txt")
+shap <- lapply(shap_files, fread)
+
+# add a column with the cell type of every cells set
+for(i in 1:length(shap)){
+  shap[[i]]$CellType <- CellTypes[i]
+}
+
+shap <- do.call("rbind", shap)
+
+shap <- melt(shap, varnames = c("CellID", "motif", "CellType"))
+colnames(shap)[4:5] <- c("ModelClass", "shap")
+shap$group <- with(shap, paste(motif, ModelClass, sep = ":"))
+shap <- tidyr::spread(shap[,c("CellID", "CellType", "shap", "group")]
+                      , group, shap)
+saveRDS(object = shap, file = "ysed_by_ysedMarkerP_matched_shap.rds")
