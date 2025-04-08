@@ -7,7 +7,7 @@ The following provides the code and scripts used in the BOM manuscript. Scripts 
 ![BOM pipeline](///BOM_pipeline.png)
 -->
 
-## R dependencies
+## R (4.0.0) dependencies
 
 Please load the below R packages.
 > sample(1.1.1); xgboost(1.6.0.1); GenomicFeatures(1.42.3); GenomicRanges(1.42.0); data.table(1.14.8); tidyr(1.3.0); dplyr(1.1.0); cvAUC(1.1.4); pROC(1.18.0); ggplot2(3.4.1); yardstick(1.1.0)
