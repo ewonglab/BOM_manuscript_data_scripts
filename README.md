@@ -24,9 +24,14 @@ chmod +x ./scripts/binary/*.sh
 
 For a comprehensive guide on how to fully utilize BOM, including data pre-process, model training, model prediction and model interpretation. 
 Please refer to the tutorials provided below.
+
+- [Model training and prediction]([https://ewonglab.github.io/BOM/](https://github.com/ewonglab/BOM_manuscript_data_scripts/blob/main/Tutorial/tutorial_model.ipynb)
+- [Model interpretation](https://github.com/ewonglab/BOM_manuscript_data_scripts/blob/main/Tutorial/tutorial_interpretation.ipynb)
+
+```
 - [Model training and prediction](https://ewonglab.github.io/BOM/)
 - [Model interpretation](https://ewonglab.github.io/BOM/binary_models_interpretation/)
-
+```
 ## Candicate cis-regulatory elements filter
 
 Usage:  ```filter_CREs.R  --help ```
