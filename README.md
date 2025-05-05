@@ -73,6 +73,7 @@ Usage: args [-o] [-g] [-b] [-m]
 -o means set a output path (Default: ./Tutorial/motifs)
 -b means path to bed file folder (Default: ./Tutorial/bed_files)
 ```
+Please use Fimo version 5.4.0
 
 ## Motif Counting
 
