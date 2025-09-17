@@ -10,7 +10,7 @@ do
 for target in ${!target_li[@]}
 do
 if [[ "${model_li[$model]}" != "${target_li[$target]}" ]]; then
-Rscript predict_other.R  "${model_li[$model]}" "${target_li[$target]}"
+Rscript blood_predict_other.R  "${model_li[$model]}" "${target_li[$target]}"
 fi
 done
 done
