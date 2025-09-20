@@ -1,11 +1,7 @@
-Mean biochip signal across q-value thresholds: Mef2c motifs
-
-library("Hmisc", lib = "/g/data/zk16/software/Rpackages_paola/R_4.0.0")
+library("Hmisc")
 library(GenomicRanges)
 library(ggplot2)
 library(viridis)
-
-setwd("/g/data/zk16/cc3704/mouse_enh_grammar/data/mouse/e12.5")
 
 ## MOTIF: Mef2c
 tf <- "Mef2c"
@@ -25,12 +21,12 @@ table(is.na(mm10_summits$mean))
 # 30174
 
 # reading cardiomyocyte gimme
-gimme <- read.table(file = "/g/data/zk16/cc3704/mouse_data/gottgens_scATAC/fimo/gimme/cardiom_Gimme_vertv5.0/fimo.tsv"
+gimme <- read.table(file = "/gimme/cardiom_Gimme_vertv5.0/fimo.tsv"
                     , header = T, stringsAsFactors = F, sep = '\t')
 gimme <- gimme[gimme$q.value <= 0.5, ]
 
 # read annotation and keep only Srf motifs
-gimme_annot <- read.table(file = "/g/data/zk16/useful/gimmemotifs/gimme.vertebrate.v5.0.motif2factors.txt"
+gimme_annot <- read.table(file = "/useful/gimmemotifs/gimme.vertebrate.v5.0.motif2factors.txt"
                           , header = T, stringsAsFactors = F, sep ='\t')
 unique(grep("Mef2c", gimme_annot$Factor, ignore.case = T, value=T))
 # "Mef2c" "MEF2C"
