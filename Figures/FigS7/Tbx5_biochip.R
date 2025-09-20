@@ -1,11 +1,9 @@
-Mean biochip signal across q-value thresholds: Tbx5 motifs
-
-library("Hmisc", lib = "/g/data/zk16/software/Rpackages_paola/R_4.0.0")
+library("Hmisc")
 library(GenomicRanges)
 library(ggplot2)
 library(viridis)
 
-setwd("/g/data/zk16/cc3704/mouse_enh_grammar/data/mouse/e12.5")
+setwd("data/mouse/e12.5")
 
 ## MOTIF: Tbx5
 tf <- "Tbx5"
@@ -125,7 +123,6 @@ dev.off()
 table(gimme_biochip$q.value_bin)
 # 1   2   3   4   5
 # 0   0   0   4 144
-
 
 n_motifs <- data.frame(quitile=c(1, 2, 3, 4, 5), n_motifs = c(0, 0, 0, 4, 144))
 n_motifs$quitile <- factor(n_motifs$quitile ,levels = c(1, 2, 3, 4, 5))
