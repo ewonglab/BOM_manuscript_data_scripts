@@ -16,8 +16,8 @@ mouse <- unique(mouse)
 mouse_celltype <- mouse[!is.na(mouse$celltype_specificity),]#19453     5
 mouse_celltype.spc <- mouse_celltype[grep(";", mouse_celltype$celltype_specificity, invert = TRUE),]# 15504     5
 
-mm10_txdb <- makeTxDbFromGFF(file="/g/data/zk16/cc3704/mouse_data/Mus_musculus.GRCm38.92.gtf"
-                             , format="gtf",organism="Mus musculus")
+mm10_txdb <- makeTxDbFromGFF(file = "Mus_musculus.GRCm38.92.gtf"
+                             , format = "gtf", organism = "Mus musculus")
 mm10_prox <- promoters(x = mm10_txdb, upstream = 1000, downstream = 1000)
 
 mouse_celltype.spc_gr <- with(mouse_celltype.spc, GRanges(peak_chr, IRanges(peak_start+1, peak_end)))
@@ -65,7 +65,7 @@ colnames(flanking_dwn) <- c("peak_chr", "dwn_flanking_start", "dwn_flanking_end"
 summary(with(flanking_ups, ups_flanking_end - ups_flanking_start))
 head(flanking_ups, 2)
 
-chr_sizes <- read.table(file = "/g/data/zk16/cc3704/mouse_data/mouse_sizes_primary_genome_tab.txt"
+chr_sizes <- read.table(file = "/mouse_data/mouse_sizes_primary_genome_tab.txt"
                         , header = FALSE, stringsAsFactors = FALSE, sep = '\t')
 # table(flanking_dwn$dwn_flanking_start < 0) 
 tmp <- merge(flanking_dwn, chr_sizes, by.x = "peak_chr", by.y = "V1")
@@ -91,8 +91,6 @@ dwn_ov <- as.data.frame(findOverlaps(flanking_dwn_gr, flanking_dwn_windows))
 ups_to_windows <- cbind(flanking_ups[ups_ov$queryHits, ], flanking_ups_windows.df[ups_ov$subjectHits, ])
 dnw_to_windows <- cbind(flanking_dwn[dwn_ov$queryHits, ], flanking_dwn_windows.df[dwn_ov$subjectHits, ])
 
-setwd("/scratch/zk16/cc3704/E8.25_flanking")
-getwd()
 write.table(x = ups_to_windows, file = "dist_nc_upstream_windows_500bp_50str.txt", quote = FALSE, sep = "\t")
 write.table(x = dnw_to_windows, file = "dist_nc_downstream_windows_500bp_50str.txt", quote = FALSE, sep = "\t")
 
@@ -102,7 +100,6 @@ mouse <- unique(mouse)
 mouse_celltype <- mouse[!is.na(mouse$celltype_specificity),]#19453     5
 mouse_celltype.spc <- mouse_celltype[grep(";", mouse_celltype$celltype_specificity, invert = TRUE),]# 15504     5
 
-# gr object of enhancers
 mouse_celltype.spc_gr <- with(mouse_celltype.spc, GRanges(peak_chr, IRanges(peak_start+1, peak_end)))
 x <- as.data.frame(findOverlaps(mouse_celltype.spc_gr, mm10_prox))
 mouse_distal <- mouse_celltype.spc[-unique(x$queryHits),]#13014     5
@@ -135,8 +132,6 @@ y <- as.data.frame(findOverlaps(cardiom_CREs_gr, cardiom_dnw_gr))
 
 cardiomCREs_ov_ups <- (cbind(cardiom_CREs[x$queryHits, ], cardiom_windows_ups[x$subjectHits, ]))
 cardiomCREs_ov_dwn <- (cbind(cardiom_CREs[y$queryHits, ], cardiom_windows_dwn[y$subjectHits, ]))
-dim(cardiomCREs_ov_ups)
-dim(cardiomCREs_ov_dwn)
 
 cardiom_windows_ups.unique <- unique(cardiom_windows_ups[, c('seqnames', 'start', 'end', 'flankID')])
 cardiom_windows_dwn.unique <- unique(cardiom_windows_dwn[, c('seqnames', 'start', 'end', 'flankID')])
@@ -153,7 +148,6 @@ x <- as.data.frame(findOverlaps(cardiom_CREs_gr, cardiom_windows_ups.unique_gr))
 cardiom_UPS <- cardiom_windows_ups.unique[-unique(x$subjectHits), ]
 cardiom_DWN <- cardiom_windows_dwn.unique[-unique(x$subjectHits), ]
 
-# update window IDs with 0-based coordinates
 cardiom_UPS$flankID <- with(cardiom_UPS, paste(seqnames, paste(start, end, sep = "_"), sep = ":"))
 cardiom_DWN$flankID <- with(cardiom_DWN, paste(seqnames, paste(start, end, sep = "_"), sep = ":"))
 
