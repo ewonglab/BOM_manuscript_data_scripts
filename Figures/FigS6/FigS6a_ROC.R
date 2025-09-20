@@ -1,12 +1,11 @@
-ROC curves with qvalues 0.3 and 0.1
+suppressMessages({
+  library("yardstick")
+  library("cvAUC")
+  library(pROC)
+  library(ggplot2)
+})
 
-##### qvalue <= 0.3 ROC CURVES
-suppressMessages(library("yardstick", lib = "/g/data/zk16/software/Rpackages_paola/R_4.0.0"))
-suppressMessages(library("cvAUC", lib="/g/data/zk16/software/Rpackages_paola/R_4.0.0"))
-suppressMessages(library(pROC))
-suppressMessages(library(ggplot2))
-
-setwd("/g/data/zk16/cc3704/mouse_enh_grammar/xgb/e8.25/qvals")
+setwd("xgb/e8.25/qvals")
 pred_files <- c("allantois_vs_other_vert5.0_qval0.3_49T_pred.txt"
                 , "mixed_meso_vs_other_vert5.0_qval0.3_303T_pred.txt"
                 , "cardiom_vs_other_vert5.0_qval0.3_582T_pred.txt"
@@ -29,23 +28,7 @@ pred_li <- lapply(pred_files, read.table, header = T, stringsAsFactors = F)
 celltypes <- sub("_vs_other_.*", "", pred_files)
 names(pred_li) <- celltypes
 bom_rocs <- lapply(pred_li, function(x) roc(x$actual, x$raw, direction="<"))
-# Setting levels: control = 0, case = 1
-# Setting levels: control = 0, case = 1
-# Setting levels: control = 0, case = 1
-# Setting levels: control = 0, case = 1
-# Setting levels: control = 0, case = 1
-# Setting levels: control = 0, case = 1
-# Setting levels: control = 0, case = 1
-# Setting levels: control = 0, case = 1
-# Setting levels: control = 0, case = 1
-# Setting levels: control = 0, case = 1
-# Setting levels: control = 0, case = 1
-# Setting levels: control = 0, case = 1
-# Setting levels: control = 0, case = 1
-# Setting levels: control = 0, case = 1
-# Setting levels: control = 0, case = 1
-# Setting levels: control = 0, case = 1
-# Setting levels: control = 0, case = 1
+
 names(bom_rocs) <- celltypes
 
 my_colours <- c("#0072B2", "#009E73", "#D55E00", "#CC79A7", "#F0E442"
@@ -84,14 +67,6 @@ pdf("mouseE8.25_nc_BOM_binary_qval0.3_pred_ROCs.pdf")
 p
 dev.off()
 
-
-##### qvalue <= 0.1 ROC CURVES
-suppressMessages(library("yardstick", lib = "/g/data/zk16/software/Rpackages_paola/R_4.0.0"))
-suppressMessages(library("cvAUC", lib="/g/data/zk16/software/Rpackages_paola/R_4.0.0"))
-suppressMessages(library(pROC))
-suppressMessages(library(ggplot2))
-
-setwd("/g/data/zk16/cc3704/mouse_enh_grammar/xgb/e8.25/qvals")
 pred_files <- c("allantois_vs_other_vert5.0_qval0.1_3T_pred.txt"
                 , "mixed_meso_vs_other_vert5.0_qval0.1_108T_pred.txt"
                 , "cardiom_vs_other_vert5.0_qval0.1_51T_pred.txt"
