@@ -1,13 +1,7 @@
-
-Mean biochip signal across q-value thresholds: Nkx2-5 motifs
-
-# OVERLAP MM10 SUMMIT COORDINATES WITH MOTIFS
-library("Hmisc", lib = "/g/data/zk16/software/Rpackages_paola/R_4.0.0")
+library("Hmisc")
 library(GenomicRanges)
 library(ggplot2)
 library(viridis)
-
-setwd("/g/data/zk16/cc3704/mouse_enh_grammar/data/mouse/e12.5")
 
 ## MOTIF: SRF
 tf <- "Nkx2-5"
@@ -27,12 +21,12 @@ table(is.na(mm10_summits$mean))
 # 25859
 
 # reading cardiomyocyte gimme
-gimme <- read.table(file = "/g/data/zk16/cc3704/mouse_data/gottgens_scATAC/fimo/gimme/cardiom_Gimme_vertv5.0/fimo.tsv"
+gimme <- read.table(file = "/gimme/cardiom_Gimme_vertv5.0/fimo.tsv"
                     , header = T, stringsAsFactors = F, sep = '\t')
 gimme <- gimme[gimme$q.value <= 0.5, ]
 
 # read annotation and keep only Srf motifs
-gimme_annot <- read.table(file = "/g/data/zk16/useful/gimmemotifs/gimme.vertebrate.v5.0.motif2factors.txt"
+gimme_annot <- read.table(file = "/useful/gimmemotifs/gimme.vertebrate.v5.0.motif2factors.txt"
                           , header = T, stringsAsFactors = F, sep ='\t')
 
 Nkx2.5_motifs <- unique(gimme_annot[gimme_annot$Factor %in% c("Nkx2-5", "NKX2-5", "Nkx2.5")
@@ -167,46 +161,3 @@ dev.off()
 
 write.table(x = gimme_biochip, file = "Nkx2.5_gimme_biochip.txt"
             , sep ='\t', quote = F)
-
-# Line plots
-
-gimme_biochip.median <- aggregate(mean ~ q.value_bin, gimme_biochip, median)
-gimme_biochip.sd <- aggregate(mean ~ q.value_bin, gimme_biochip, sd)
-colnames(gimme_biochip.sd)[2] <- "sd"
-# sttandard error formula
-std <- function(x) sd(x)/sqrt(length(x))
-gimme_biochip.se <- aggregate(mean ~ q.value_bin, gimme_biochip, std)
-colnames(gimme_biochip.se)[2] <- "se"
-
-# adding levels without motifs
-gimme_biochip.median <- rbind(gimme_biochip.median, data.frame(q.value_bin = c(1, 2, 3)
-                                                               , mean = c(0, 0, 0)))
-
-gimme_biochip.summary <- merge(gimme_biochip.median, gimme_biochip.sd
-                               , by = "q.value_bin", all.x = T)
-gimme_biochip.summary <- merge(gimme_biochip.summary, gimme_biochip.se
-                               , by = "q.value_bin", all.x = T)
-
-# mean = median of mean signal
-pdf("Nkx2.5_qval_versus_biochip_signal_line.pdf")
-ggplot(gimme_biochip.summary, aes(x = q.value_bin, y = mean, group=1)) +
-  geom_line() + geom_point() +
-  geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2,
-                position=position_dodge(0.05)) + theme_classic()
-dev.off()
-
-pdf("Nkx2.5_qval_versus_biochip_signal_line.se.pdf")
-ggplot(gimme_biochip.summary, aes(x = q.value_bin, y = mean, group=1)) +
-  geom_line() + geom_point() +
-  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=.2,
-                position=position_dodge(0.05)) + theme_classic()
-dev.off()
-
-
-gimme_biochip.summary
-# q.value_bin     mean       sd        se
-# 1           1 0.000000       NA        NA
-# 2           2 0.000000       NA        NA
-# 3           3 0.000000       NA        NA
-# 4           4 7.885252 6.209817 0.6272862
-# 5           5 7.899775 7.189226 0.3645082
