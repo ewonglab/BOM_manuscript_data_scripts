@@ -23,12 +23,12 @@ table(is.na(mm10_summits$mean))
 # 30785
 
 # reading cardiomyocyte gimme
-gimme <- read.table(file = "/g/data/zk16/cc3704/mouse_data/gottgens_scATAC/fimo/gimme/cardiom_Gimme_vertv5.0/fimo.tsv"
+gimme <- read.table(file = "/gimme/cardiom_Gimme_vertv5.0/fimo.tsv"
                     , header = T, stringsAsFactors = F, sep = '\t')
 gimme <- gimme[gimme$q.value <= 0.5, ]
 
 # read annotation and keep only Srf motifs
-gimme_annot <- read.table(file = "/g/data/zk16/useful/gimmemotifs/gimme.vertebrate.v5.0.motif2factors.txt"
+gimme_annot <- read.table(file = "/useful/gimmemotifs/gimme.vertebrate.v5.0.motif2factors.txt"
                           , header = T, stringsAsFactors = F, sep ='\t')
 unique(grep("Tbx5", gimme_annot$Factor, ignore.case = T, value=T))
 # "Tbx5" "TBX5"
