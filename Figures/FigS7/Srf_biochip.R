@@ -1,10 +1,7 @@
-Mean biochip signal across q-value thresholds: Sfr motifs
-
-# OVERLAP MM10 SUMMIT COORDINATES WITH MOTIFS
-library("Hmisc", lib = "/g/data/zk16/software/Rpackages_paola/R_4.0.0")
+library("Hmisc")
 library(GenomicRanges)
 
-setwd("/g/data/zk16/cc3704/mouse_enh_grammar/data/mouse/e12.5")
+setwd("data/mouse/e12.5")
 
 ## MOTIF: SRF
 tf <- "Srf"
@@ -24,12 +21,12 @@ table(is.na(mm10_summits$mean))
 # 18519
 
 # reading cardiomyocyte gimme
-gimme <- read.table(file = "/g/data/zk16/cc3704/mouse_data/gottgens_scATAC/fimo/gimme/cardiom_Gimme_vertv5.0/fimo.tsv"
+gimme <- read.table(file = "/gimme/cardiom_Gimme_vertv5.0/fimo.tsv"
                     , header = T, stringsAsFactors = F, sep = '\t')
 gimme <- gimme[gimme$q.value <= 0.5, ]
 
 # read annotation and keep only Srf motifs
-gimme_annot <- read.table(file = "/g/data/zk16/useful/gimmemotifs/gimme.vertebrate.v5.0.motif2factors.txt"
+gimme_annot <- read.table(file = "/useful/gimmemotifs/gimme.vertebrate.v5.0.motif2factors.txt"
                           , header = T, stringsAsFactors = F, sep ='\t')
 
 srf_motifs <- unique(gimme_annot[gimme_annot$Factor %in% c("SRF", "Srf"), c("Factor", "Motif")])
@@ -116,27 +113,6 @@ gimme_biochip$location_id <- with(gimme_biochip, paste(CRE_chr, motif_start, mot
 library(ggplot2)
 library(viridis)
 
-pdf("Srf_qval_versus_biochip_signal.pdf")
-ggplot(gimme_biochip, aes(x = q.value_bin, y = mean, fill = q.value_bin)) +
-  geom_boxplot() +
-  scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
-  theme_classic() +
-  theme(legend.position="none",
-        plot.title = element_text(size=11))
-# xlab("")
-dev.off()
-
-pdf("Srf_qval_versus_biochip_signal.1.pdf")
-ggplot(gimme_biochip, aes(x = q.value_bin, y = log10(mean), fill = q.value_bin)) +
-  geom_boxplot() +
-  scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
-  theme_classic() +
-  theme(legend.position="none",
-        plot.title = element_text(size=11))
-# xlab("")
-dev.off()
-
-
 pdf("Srf_qval_versus_biochip_signal_violin.pdf")
 ggplot(gimme_biochip, aes(x = q.value_bin, y = log10(mean), fill = q.value_bin)) +
   geom_violin(trim = FALSE, color="black") +
@@ -155,48 +131,9 @@ table(gimme_biochip$q.value_bin)
 n_motifs <- data.frame(quitile=c(1, 2, 3, 4, 5), n_motifs = c(10, 24, 71, 403, 190))
 n_motifs$quitile <- factor(n_motifs$quitile ,levels = c(1, 2, 3, 4, 5))
 
-
 pdf("Srf_qval_number_motifs.pdf")
 ggplot(data=n_motifs, aes(x=quitile, y=n_motifs)) +
   geom_bar(stat="identity") + theme_classic() +
   scale_x_discrete(drop = FALSE)
 dev.off()
 
-#Line plots
-
-gimme_biochip.median <- aggregate(mean ~ q.value_bin, gimme_biochip, median)
-gimme_biochip.sd <- aggregate(mean ~ q.value_bin, gimme_biochip, sd)
-colnames(gimme_biochip.sd)[2] <- "sd"
-# sttandard error formula
-std <- function(x) sd(x)/sqrt(length(x))
-gimme_biochip.se <- aggregate(mean ~ q.value_bin, gimme_biochip, std)
-colnames(gimme_biochip.se)[2] <- "se"
-
-gimme_biochip.summary <- merge(gimme_biochip.median, gimme_biochip.sd
-                               , by = "q.value_bin", all.x = T)
-gimme_biochip.summary <- merge(gimme_biochip.summary, gimme_biochip.se
-                               , by = "q.value_bin", all.x = T)
-
-# mean = median of mean signal
-pdf("Srf_qval_versus_biochip_signal_line.pdf")
-ggplot(gimme_biochip.summary, aes(x = q.value_bin, y = mean, group=1)) +
-  geom_line() + geom_point() +
-  geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2,
-                position=position_dodge(0.05)) + theme_classic()
-dev.off()
-
-pdf("Srf_qval_versus_biochip_signal_line.se.pdf")
-ggplot(gimme_biochip.summary, aes(x = q.value_bin, y = mean, group=1)) +
-  geom_line() + geom_point() +
-  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=.2,
-                position=position_dodge(0.05)) + theme_classic()
-dev.off()
-
-
-gimme_biochip.summary
-# q.value_bin     mean       sd       se
-# 1           1  3.77242 19.47080 6.157207
-# 2           2 32.64643 23.63558 4.824593
-# 3           3 23.76685 20.47455 2.429882
-# 4           4 25.33485 23.87301 1.189199
-# 5           5 16.48315 24.36753 1.767807
