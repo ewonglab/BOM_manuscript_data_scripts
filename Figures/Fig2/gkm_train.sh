@@ -1,0 +1,17 @@
+gkmtrain -t4 -l11 -k7 -d3 -T4 allantois_500bp_pos_train.fa allantois_500bp_neg_train.fa allantois_500bp_t4_l11_k7_d3
+gkmtrain -t4 -l11 -k7 -d3 -T4 forebrain_500bp_pos_train.fa forebrain_500bp_neg_train.fa forebrain_500bp_t4_l11_k7_d3
+gkmtrain -t4 -l11 -k7 -d3 -T4 neuralcrest_500bp_pos_train.fa neuralcrest_500bp_neg_train.fa neuralcrest_500bp_t4_l11_k7_d3
+gkmtrain -t4 -l11 -k7 -d3 -T4 spinalcord_500bp_pos_train.fa spinalcord_500bp_neg_train.fa spinalcord_500bp_t4_l11_k7_d3
+gkmtrain -t4 -l11 -k7 -d3 -T4 cardiom_500bp_pos_train.fa cardiom_500bp_neg_train.fa cardiom_500bp_t4_l11_k7_d3
+gkmtrain -t4 -l11 -k7 -d3 -T4 gut_500bp_pos_train.fa gut_500bp_neg_train.fa gut_500bp_t4_l11_k7_d3
+gkmtrain -t4 -l11 -k7 -d3 -T4 NMP_500bp_pos_train.fa NMP_500bp_neg_train.fa NMP_500bp_t4_l11_k7_d3
+gkmtrain -t4 -l11 -k7 -d3 -T4 surface_ecto_500bp_pos_train.fa surface_ecto_500bp_neg_train.fa surface_ecto_500bp_t4_l11_k7_d3
+gkmtrain -t4 -l11 -k7 -d3 -T4 endothelium_500bp_pos_train.fa endothelium_500bp_neg_train.fa endothelium_500bp_t4_l11_k7_d3
+gkmtrain -t4 -l11 -k7 -d3 -T4 mesenchyme_500bp_pos_train.fa mesenchyme_500bp_neg_train.fa mesenchyme_500bp_t4_l11_k7_d3
+gkmtrain -t4 -l11 -k7 -d3 -T4 paraxial_meso_500bp_pos_train.fa paraxial_meso_500bp_neg_train.fa paraxial_meso_500bp_t4_l11_k7_d3
+gkmtrain -t4 -l11 -k7 -d3 -T4 erythroid_500bp_pos_train.fa erythroid_500bp_neg_train.fa erythroid_500bp_t4_l11_k7_d3
+gkmtrain -t4 -l11 -k7 -d3 -T4 mid_hindbrain_500bp_pos_train.fa mid_hindbrain_500bp_neg_train.fa mid_hindbrain_500bp_t4_l11_k7_d3
+gkmtrain -t4 -l11 -k7 -d3 -T4 pharyngeal_meso_500bp_pos_train.fa pharyngeal_meso_500bp_neg_train.fa pharyngeal_meso_500bp_t4_l11_k7_d3
+gkmtrain -t4 -l11 -k7 -d3 -T4 exe_endo_500bp_pos_train.fa exe_endo_500bp_neg_train.fa exe_endo_500bp_t4_l11_k7_d3
+gkmtrain -t4 -l11 -k7 -d3 -T4 mixed_meso_500bp_pos_train.fa mixed_meso_500bp_neg_train.fa mixed_meso_500bp_t4_l11_k7_d3
+gkmtrain -t4 -l11 -k7 -d3 -T4 somitic_meso_500bp_pos_train.fa somitic_meso_500bp_neg_train.fa somitic_meso_500bp_t4_l11_k7_d3
